@@ -1,208 +1,210 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <title>Formulaire</title>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="css/materialize.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
+<head>
+<title>Formulaire</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="css/materialize.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/Formulaire.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
 
 <body>
-    
-<nav class="teal lighten-2" role="navigation">
-    <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo ">INSCRIPTION</a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="Region.html">Region</a></li>
-          <li><a href="index.html">Maison</a></li>
-      </ul>
 
-      <ul id="nav-mobile" class="side-nav">
-        <li><a href="Region.html">Region</a></li>
-          <li><a href="Maison.html">Maison</a></li>
-      </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-    </div>
-  </nav>
-  
-<div class="row">
+		<!-- Barre de navigation -->
 
-    <form method="post" action="/Maison2/Reservation">
-        
-	        <div class="col s6 center-align">
-	            <label for="nom"><h5>Nom : </h5></label>
-	            <input type="text" id="nom" name="nom" required/>
-	        </div>
-	        
-	        <div class="col s6 center-align">
-	            <label for="Prénom"><h5>Prénom :</h5></label>
-	            <input type="text" id="prénom" name="prenom" required/>
-	        </div>
-	 </div>   
-	 
-	 <div class="row" >
-	        <div class="col s6 center-align">
-	            <label for="courriel"><h5>Email :</h5></label>
-	            <input type="email" id="courriel" name="mail" required/>
-	        </div>
-	        
-	        <div class="col s6 center-align">
-	        	<label for="telephone"><h5>Téléphone : </h5>
-	           	<input type="text" id="telephone" name="telephone" required/></label>
-	        </div>
-	  </div>
-	  
-	  <div class="row">
-	  
-	  		<div class ="col s6 center-align"> 
-	  			<h5>Veuillez selectionner le jour d'arrivée</h5>
-	  			<input type="text" class="datepicker">	  
-	  		</div>
- 
-	        <div class ="col s6 center-align">              
-	            <h5>Saisissez le nombre de nuit :</h5>
-	    
-	            <div class="input-field">
-	            	<select name="nbnuitchoisis" onchange="estimationPrix()">
-	            	  <option value="" disabled selected></option>
-				      <option value="1">1 nuit</option>
-				      <option value="2">2 nuits</option>
-				      <option value="3">3 nuits</option>
-				      <option value="4">4 nuits</option>
-				      <option value="5">5 nuits</option>
-				      <option value="6">6 nuits</option>
-				      <option value="7">7 nuits</option>
-				    </select>
-			 </div>
-	        </div>
-	     </div>
-	  	 
-<div class = "row">
+	<nav class="white">
+	    <div class="nav-wrapper container">
+	      <a href="#" class="brand-logo">FORMULAIRE</a>
+	      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+	     
+	      <ul class="right hide-on-med-and-down">
+	        <li><a href="Region.html">Région</a></li>
+	        <li><a href="index.html">Maison</a></li>
+	      </ul>
 	
-	<div class ="col s6 center-align">              
-	            <h5>Saisissez le nombre de personnes</h5>
-	    
-	            <div class="input-field">
-	            	<select name="nbnuitchoisis" onchange="estimationPrix()">
-		            	  <option value="" disabled selected></option>
-					      <option value="1">1 personne</option>
-					      <option value="2">2 personnes</option>
-					      <option value="3">3 personnes</option>
-					      <option value="4">4 personnes</option>
-				    </select>
-			 	</div>
-	        </div>
-	 	 
-	<div class ="col s6 center-align">  
-		 <h5>Veuillez séléctionner les options : </h5><br>
-	      
-	        <input type="checkbox" id="parking" value="20" onclick="estimationPrix()" /> 
-	                <label for="parking">Parking</label>
-	
-	         <input type="checkbox" id="animal" value="10" onclick="estimationPrix()"> 
-	                <label for="animal">Animal</label>
-	            
-	        <input type="checkbox" id="fumeur" value="5" onclick="estimationPrix()">
-	                <label for="fumeur">Fumeur</label>
-	  </div>
-</div>
+	      <ul id="mobile-demo" class="side-nav">
+	       	<li><a href="Region.html">Région</a></li>
+	        <li><a href="index.html">Maison</a></li>
+	      </ul>
+	      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons"></i></a>
+	    </div>
+ 	</nav>
 
-<div class="row">
-		<div class ="col s6 center-align"> 
-
-	        <h5>Pour quels motifs souhaitez-vous réserver : </h5><br>
-	            
-	            <input name="sejour" type="radio" id="sejourloisir" >
-	                <label for="sejourloisir">Séjour loisirs</label>
-	            
-	            <input name="sejour" type="radio" id="sejourpro">
-	                <label for="sejourpro">Séjour professionnel</label>
-	 
-	 	</div>
-	 
-	    <div class ="col s6 center-align">                  
+	<form method="post" action="/Maison2/Reservation">
 	
-	                <h5>De quelle région êtes-vous originaire ? </h5>
-	             
-	             <div class="input-field">
-	            	<select name="regionorigine" required>
-		            	  	<option>Auvergne-Rhône-Alpes</option>
-	                        <option>Bourgogne-Franche-Comté</option>
-	                        <option>Bretagne</option>
-	                        <option>Centre-Val de Loire</option>
-	                        <option>Corse</option>
-	                        <option>Grand Est</option>
-	                        <option>Hauts-de-France</option>
-	                        <option>Île-de-France</option>
-	                        <option>Normandie</option>
-	                        <option>Nouvelle-Aquitaine</option>
-	                        <option>Occitanie</option>
-	                        <option>Pays de la Loire</option>
-	                        <option>Provence-Alpes-Côte d'Azur</option>
-				    </select>
-			 	</div>	                            
+			<!-- Choix du jour d'arrivé -->
+
+		<div class="row">
+			
+			<div class="input-field col s6 center-align">
+
+				<h5>Veuillez selectionner le jour d'arrivée</h5> 
+				<input type="text" class="datepicker" data-date-format='dd-mm-yy' name="dateArrive" />
+
+			</div>
+
+			<!-- Choix du nombre de nuit -->
+	
+			<div class="input-field col s6 center-align">
+
+				<h5>Saisissez le nombre de nuit :</h5>
+
+				<select name="nbNuit" id="nbNuit" required>
+					
+					<option value="" disabled selected>Nombre de nuit</option>
+					<option value="1">1 nuit</option>
+					<option value="2">2 nuits</option>
+					<option value="3">3 nuits</option>
+					<option value="4">4 nuits</option>
+					<option value="5">5 nuits</option>
+					<option value="6">6 nuits</option>
+					<option value="7">7 nuits</option>
+										
+				</select>
+			</div>
 		</div>
-</div>
-	
-	 <div class="row">    
-		    <div class="col s12 center-align">
-	            <h5><p type="text" id="resultat">Estimation du prix : 0 €</p></h5>
-	        </div>
-	 </div> 
-	 
-	 <div class="row">   
-	        <div class="col s12 center-align" >
-	            <button class="btn waves-effect waves-light " type="submit" name="action" >ENVOYER
-	            </button>
-	        </div>
-	  </div>   
-	               
-</form>    
-         
-    <script>
- 	            document.getElementById("nbnuitchoisis").addEventListener("change", estimationPrix() {
- 	            document.getElementById("resultat").innerText= "Estimation du prix : " + prixDeBase + " €";
- 	            });
- 	</script>
- 	
- 	<script>
-        
-         function estimationPrix(){
-            var prixDeBase = 0;
-            var nbPersonne = parseInt(document.getElementById("nbpersonnechoisis").value);
-            var nbNuit = parseInt(document.getElementById("nbnuitchoisis").value);
-            var prixNuit=100;
-            
-            if (nbNuit >= 1) {
-                prixDeBase = prixNuit*nbNuit;
-                }
-            if (document.getElementById("parking").checked == true){
-                prixDeBase+=20;
-                }
-            if (document.getElementById("animal").checked == true) {
-                prixDeBase+=10;
-                }
-            if (document.getElementById("fumeur").checked == true) {
-                prixDeBase+=5;
-            }
-            if (nbPersonne == 3)
-                {
-                prixDeBase+=10;
-                }     
-             if (nbPersonne == 4)
-                {
-                prixDeBase+=20;
-                }
-                       
-            document.getElementById("resultat").innerText= "Estimation du prix : " + prixDeBase + " €";
-            }
-          
-    </script>
+
+		<div class="row">
+
+			<!-- NOM -->
+
+			<div class="col s6 center-align">
+				<label for="nom" class="form-title">Nom :</label>
+				<input type="text" id="nom" name="nom" required />
+			</div>
+			
+			<!-- PRENOM -->
+
+			<div class="col s6 center-align">
+				
+				<label for="prénom" class="form-title">Prénom :</label>
+				<input type="text" id="prénom" name="prenom" required />
+				
+			</div>
+		</div>
+
+		<div class="row">
+		
+			<!-- MAIL -->
+		
+			<div class="col s6 center-align">
+				<label for="courriel" class="form-title">Email :</label> 
+				<input type="email"	id="courriel" name="mail" required />
+			</div>
+			
+			<!-- TELEPHONE -->
+
+			<div class="col s6 center-align">
+				<label for="telephone" class="form-title">Téléphone :</label>
+				<input type="text" id="telephone" name="telephone" required />
+			</div>
+		</div>
+
+		<div class="row">
+		
+		<!-- Choix du motif de la reservation -->
+		
+		<div class="col s6 center-align">
+
+				<h5>Pour quels motifs souhaitez-vous réserver :</h5> <br> 
+				
+				<input name="sejour" type="radio" id="sejourloisir">
+				<label for="sejourloisir">Séjour loisirs</label> 
+				<input name="sejour" type="radio" id="sejourpro"> 
+				<label for="sejourpro">Séjour professionnel</label>
+
+			</div>
+		
+			<!-- CHOIX DES OPTIONS -->
+
+			<div class="col s6 center-align">
+			
+				<h5>Veuillez séléctionner les options :</h5>
+				
+				<br> <input type="checkbox" id="parking" name="parking" /> <label
+					for="parking">Parking</label> <input type="checkbox" id="animal"
+					name="animal"> <label for="animal">Animal</label> <input
+					type="checkbox" id="fumeur" value="5" name="fumeur"> <label
+					for="fumeur">Fumeur</label>
+			</div>
+		</div>
+
+		<div class="row">
+					
+			<!-- CHOIX DU NOMBRE DE PERSONNE -->
+
+			<div class="col s6 center-align">
+
+				<h5>Saisissez le nombre de personnes</h5>
+				
+				<select name="nbPersonne">
+					<option label="0" disabled selected>Nombre de personnes</option>
+					<option label="1">1 personne</option>
+					<option label="2">2 personnes</option>
+					<option label="3">3 personnes</option>
+					<option label="4">4 personnes</option>
+				</select>
+			</div>
+						
+			<!-- CHOIX DE LA REGION D ORIGINE -->
+
+			<div class="col s6 center-align">
+
+				<h5>De quelle région êtes-vous originaire ?</h5>
+
+				<select name="nomRegion" required>
+					<option value="" disabled selected>Région d'origine</option>
+					<option>Auvergne-Rhône-Alpes</option>
+					<option>Bourgogne-Franche-Comté</option>
+					<option>Bretagne</option>
+					<option>Centre-Val de Loire</option>
+					<option>Corse</option>
+					<option>Grand Est</option>
+					<option>Hauts-de-France</option>
+					<option>Île-de-France</option>
+					<option>Normandie</option>
+					<option>Nouvelle-Aquitaine</option>
+					<option>Occitanie</option>
+					<option>Pays de la Loire</option>
+					<option>Provence-Alpes-Côte d'Azur</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="row center">
+			<div class="col s12">
+				<button class="btn waves-effect waves-light " type="submit"
+					name="action">ENVOYER</button>
+			</div>
+		</div>
+
+	</form>
+
+<footer class="page-footer teal">
+   	
+      <div class="container">
+      	Copyright 2017 <a class="brown-text text-lighten-3" href="http://materializecss.com">SIMPLON</a>
+      </div>
     
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-  	<script>
+</footer>
+
+	<!-- INITIALISATION SCRIPT -->
+	
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script src="js/materialize.js"></script>
+	<script src="js/init.js"></script>
+	
+		
+	<!-- JAVASCRIPt -->
+	
+	<script>
+		
   			$('.datepicker').pickadate({
 		    selectMonths: true, 
 		    selectYears: 15, 
@@ -211,20 +213,13 @@
 		    close: 'Ok',
 		    closeOnSelect: false 
 		  		});
+  	
+  			$(document).ready(function() {
+  			    $('select').material_select();
+  			  });
+  			  			  			
   	</script>
-  	<script>$(document).ready(function() {
-		    $('select').material_select();
-		  	});
-  	</script>
-    
-    <footer class="card-panel teal lighten-2">
-        <div class="footer-copyright">
-            <div class="container">
-                © 2017 Copyright Simplon
-            </div>
-         </div>
-    </footer>
-    
+
 </body>
 
 </html>
