@@ -47,9 +47,12 @@ public class GestionBdd {
 					+ "', '" + nbNuit + "', '" + nbPersonne + "', '" + nomRegion + "', " + parking + ", " + animal
 					+ ", " + fumeur + ")";
 			statement.executeUpdate(sql);
+			
 		} catch (SQLException e) {
+			
 			System.out.println("An error occured trying to insert the new data !");
 		} finally {
+			
 			statement.close();
 		}
 		System.out.println();
